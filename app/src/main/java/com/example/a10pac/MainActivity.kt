@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
             val button = findViewById<Button>(R.id.button)
             var index = 0
 
-            val opens = getSharedPreferences("pref", MODE_PRIVATE)
+            val position = preferences.getString("str", "-1")
+            spinner.setSelection(position.toString().toInt())
 
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -70,10 +71,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     if (preferences.contains("str")){
-                        Log.d("Preferences", "true")
                         Log.d("Preferences", preferences.getString("str", "why?").toString())
-                    } else {
-                        Log.d("Preferences", "false")
                     }
                     val edit = preferences.edit()
                     edit.putString("str", index.toString())

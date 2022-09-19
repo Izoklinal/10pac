@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brown">#D5BBBB</color>
+    <color name="brown_button">#AF9393</color>
 </resources>
